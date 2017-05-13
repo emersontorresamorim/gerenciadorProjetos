@@ -19,7 +19,7 @@ public class ProjectBusiness {
 			throw new IllegalArgumentException("The Employee already is part of 2 Projects.");
 		} else {
 			project.getEmployees().add(employee);
-			return projectDao.save(project);
+			return projectDao.update(project);
 		}
 	}
 

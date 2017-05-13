@@ -1,8 +1,8 @@
 package br.com.sabium.prova.model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +29,7 @@ public class Employee {
 	private BigDecimal salary;
 
 	@ManyToMany(mappedBy="employees")
-	List<Project> projects = new ArrayList<>();
+	Set<Project> projects = new HashSet<>();
 
 	public Employee(String name) {
 		this.name = name;
@@ -52,8 +52,12 @@ public class Employee {
 		return salary;
 	}
 	
-	public List<Project> getProjects() {
+	public Set<Project> getProjects() {
 		return projects;
+	}
+	
+	public void setProjects(Set<Project> projects) {
+		this.projects = projects;
 	}
 	
 	@Override

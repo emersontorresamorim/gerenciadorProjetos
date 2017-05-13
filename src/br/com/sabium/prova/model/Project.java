@@ -1,7 +1,7 @@
 package br.com.sabium.prova.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +30,7 @@ public class Project {
 	@JoinTable(name = "project_employee", 
 	joinColumns = { @JoinColumn(name = "project_id") }, 
 	inverseJoinColumns = { @JoinColumn(name = "employee_id") })
-	private List<Employee> employees = new ArrayList<>();
+	private Set<Employee> employees = new HashSet<>();
 
 	public Project(String name) {
 		this.name = name;
@@ -44,8 +44,11 @@ public class Project {
 		return name;
 	}
 
-	public List<Employee> getEmployees() {
+	public Set<Employee> getEmployees() {
 		return employees;
 	}
 	
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
+	}
 }

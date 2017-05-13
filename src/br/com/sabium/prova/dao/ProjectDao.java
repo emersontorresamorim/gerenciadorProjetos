@@ -15,4 +15,5 @@ public class ProjectDao extends GenericDao<Project, Long> {
 		query.setParameter("projectName", projectName);
 		return query.getSingleResult();
 	}
+	
 }
