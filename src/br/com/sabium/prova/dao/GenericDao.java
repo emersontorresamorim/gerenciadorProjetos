@@ -12,11 +12,7 @@ public abstract class GenericDao<T, I> extends JPAUtil {
 
 	private Class<T> persistedClass;
 
-	protected GenericDao() {
-	}
-
 	protected GenericDao(Class<T> persistedClass) {
-		this();
 		this.persistedClass = persistedClass;
 	}
 

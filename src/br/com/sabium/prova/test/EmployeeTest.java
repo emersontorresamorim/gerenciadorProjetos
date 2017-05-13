@@ -13,11 +13,11 @@ public class EmployeeTest {
 
 	@Test
 	public void testSaveEmployee() {
-		EmployeeDao dao = new EmployeeDao();
+		EmployeeDao employeeDao = new EmployeeDao();
 		BigDecimal salary = new BigDecimal(4400.75);
-		Employee employee = new Employee("Joao Silva", salary);
-		dao.save(employee);
-		List<Employee> employees = dao.findAll();
+		Employee employee = new Employee("Joana Santos", salary);
+		employeeDao.save(employee);
+		List<Employee> employees = employeeDao.findAll();
 		Assert.assertNotNull(employees);
 		Assert.assertFalse(employees.isEmpty());
 		Assert.assertEquals("Joao Silva", employees.get(0).getName());

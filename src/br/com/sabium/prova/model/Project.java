@@ -1,5 +1,6 @@
 package br.com.sabium.prova.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -18,7 +19,7 @@ public class Project {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "project_generator")
-	@SequenceGenerator(name = "project_generator", sequenceName = "SEQ_PROJECT", allocationSize = 20)
+	@SequenceGenerator(name = "project_generator", sequenceName = "SEQ_PROJECT")
 	private Long id;
 
 	@Column(nullable = false, length = 300, unique = true)
@@ -29,7 +30,7 @@ public class Project {
 	@JoinTable(name = "project_employee", 
 	joinColumns = { @JoinColumn(name = "project_id") }, 
 	inverseJoinColumns = { @JoinColumn(name = "employee_id") })
-	private List<Employee> employees;
+	private List<Employee> employees = new ArrayList<>();
 
 	public Project(String name) {
 		this.name = name;
@@ -46,5 +47,5 @@ public class Project {
 	public List<Employee> getEmployees() {
 		return employees;
 	}
-
+	
 }
