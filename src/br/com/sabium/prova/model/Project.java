@@ -19,7 +19,7 @@ public class Project {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "project_generator")
 	@SequenceGenerator(name = "project_generator", sequenceName = "SEQ_PROJECT", allocationSize = 20)
-	private long id;
+	private Long id;
 
 	@Column(nullable = false, length = 300, unique = true)
 	@Size(min = 2, max = 300)
@@ -35,7 +35,7 @@ public class Project {
 		this.name = name;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

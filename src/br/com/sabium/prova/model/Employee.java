@@ -18,7 +18,7 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_generator")
 	@SequenceGenerator(name = "employee_generator", sequenceName = "SEQ_EMPLOYEE", allocationSize = 20)
-	private long id;
+	private Long id;
 
 	@Column(nullable = false, length = 300)
 	@Size(min = 2, max = 300)
@@ -39,7 +39,7 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
