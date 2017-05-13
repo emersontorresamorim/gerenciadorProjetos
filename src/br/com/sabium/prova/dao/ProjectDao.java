@@ -16,4 +16,5 @@ public class ProjectDao extends JPAUtil {
 	public List<Project> findAll() {
 		return entityManager.createQuery("select p from Project p", Project.class).getResultList();
 	}
+	
 }
