@@ -31,6 +31,8 @@ public class Employee {
 	@ManyToMany(mappedBy="employees")
 	Set<Project> projects = new HashSet<>();
 
+	public Employee() {}
+	
 	public Employee(String name) {
 		this.name = name;
 	}

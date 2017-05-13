@@ -32,6 +32,8 @@ public class Project {
 	inverseJoinColumns = { @JoinColumn(name = "employee_id") })
 	private Set<Employee> employees = new HashSet<>();
 
+	public Project() {}
+	
 	public Project(String name) {
 		this.name = name;
 	}
